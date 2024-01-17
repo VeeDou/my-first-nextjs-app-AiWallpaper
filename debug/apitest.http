@@ -1,0 +1,15 @@
+@baseUri=http://localhost:3000/api
+
+POST {{baseUri}}/test
+
+### gen wall paper
+POST {{baseUri}}/gen-wallpaper
+Content-Type: application/json
+
+{
+    "description":"happy new year"
+}
+
+### get wall paper
+
+GET {{baseUri}}/get-wallpaper
