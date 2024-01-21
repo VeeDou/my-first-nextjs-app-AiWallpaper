@@ -1,4 +1,3 @@
-import Input from "@/components/input";
 
 export default function () {
     return (
@@ -12,7 +11,6 @@ export default function () {
             
             </div>
           </div>
-          <Input />
         </div>
       
       </section>   

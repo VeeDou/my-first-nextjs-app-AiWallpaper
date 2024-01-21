@@ -3,21 +3,14 @@ import { useEffect, useState } from "react";
 import { Wallpaper } from "@/types/wallpaper";
 
 
-export default function (){
-    const [wallpapers,setWallpapers] = useState<Wallpaper[]| null >(null);
-    const fetchewallpapers = async function () {
-        const result = await fetch("api/get-wallpaper");
-        const {data} = await result.json() ;
-        if (data) {
-            setWallpapers(data);
-            console.log(data);
-        }
-        
-    };
+interface Props {
+  wallpapers: Wallpaper[];
+  setWallpapers: React.Dispatch<React.SetStateAction<Wallpaper[]>>;
+}
 
-    useEffect(()=>{
-        fetchewallpapers();
-    },[]);
+export default function ({wallpapers,setWallpapers}:Props){
+    // const [wallpapers,setWallpapers] = useState<Wallpaper[]| null >(null);
+
     return (
 <section>
   <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-12">

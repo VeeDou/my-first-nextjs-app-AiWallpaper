@@ -4,7 +4,12 @@ import { Wallpaper } from "@/types/wallpaper";
 import { useEffect, useState } from "react";
 import Wallpaperlist from "./wallpaperlist";
 
-export default   function (){
+//  拿到外面传进来的壁纸列表 变量 wallpapers
+interface Props{
+    wallpapers:Wallpaper[];
+}
+
+export default   function ({wallpapers,setWallpapers}:Props){
 
     // const [Wallpapers,setWallpapers] = useState<Wallpaper[]| null >(null);
     // const fetchewallpapers = async function () {
@@ -22,9 +27,11 @@ export default   function (){
     //     fetchewallpapers();
     // },[]);
 
+
+
     return(
         <section className='max-w-6xl mx-auto'>
-            <Wallpaperlist />
+            <Wallpaperlist wallpapers={wallpapers} setWallpapers ={setWallpapers} />
             {/* <div className='flex items-center'>
                 {Wallpapers &&
                 Wallpapers.map((v:Wallpaper,idx:number) =>{
