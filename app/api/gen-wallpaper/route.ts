@@ -16,10 +16,11 @@ export async function POST(req:Request){
         style: "natural",
     }) ;
     console.log('generate wallpaper result:',result);
+    const raw_img_url = result.data[0].url
     return Response.json({
                 code:0,
                 message:'ok',
-                data:{'img_url':"https://abc.com/xxx.jpg",
+                data:{'img_url':{raw_img_url},
                 },
             });
  
