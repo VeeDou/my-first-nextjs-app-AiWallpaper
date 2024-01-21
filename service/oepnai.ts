@@ -2,8 +2,9 @@ import OpenAI from "openai";
 import {HttpsProxyAgent} from 'https-proxy-agent'
 
 export function getOpenAIClient(): OpenAI {
-  const apiKey = process.env["OPENAI_API_KEY2"];
-  console.log('apiKey',process.env["OPENAI_API_KEY2"]);
+  
+  const apiKey = process.env["OPENAI_API_KEY"];
+  console.log('apiKey',process.env["OPENAI_API_KEY"]);
   const proxyUrl = 'http://127.0.0.1:7890';
 
   const openai = new OpenAI({
